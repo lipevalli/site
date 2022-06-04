@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./contato.css">
+        <a href="./site.html">Voltar</a>
+    </head>
+    <title>Contato</title>
+
+    <script>
+
+        function submeterContato() {
+            var nomeCompleto = document.getElementById("nome").value;
+            var cidade = document.getElementById("cidade").value;
+            var estado = document.getElementById("estado").value;
+            var assunto = document.getElementById("assunto").value;
+            var mensagem = document.getElementById("mensagem").value;
+
+            var formulario = {
+                    nomeCompleto: nome,
+                    cidade: cidade,
+                    estado: estado,
+                    assunto: assunto,
+                    mensagem: mensagem
+                };
+
+            localStorage.setItem("user", JSON.stringify(formulario));
+
+            alert("Olá, " + nomeCompleto + "!\n" + "Sua mensagem foi enviada com sucesso!\n");
+            alert("Assunto: " + formulario.assunto + "\n" + "Mensagem: " + formulario.mensagem);
+
+        }
+
+    </script>
+
+    <body>
+        <div class="container">
+            <div style="text-align: left">
+              <h1>Entre em contato</h1>
+            </div>
+            <div class="row">
+              <div class="column">
+
+                <form id="myForm" >
+
+                  <label for="nome">Nome completo</label>
+                  <input id="nome" type="text" id="nomecompleto" name="Nome Completo" placeholder="Digite o seu nome completo...">
+
+                  <label for="estado">Estado</label>
+                  <input id="estado" type="text" id="cidade" name="Estado" placeholder="Digite o nome de seu Estado...">
+                  
+                  <label for="cidade">Cidade</label>
+                  <input id="cidade" type="text" id="cidade" name="Cidade" placeholder="Digite o nome de sua cidade...">
+
+                  <label for="assunto">Assunto</label>
+                  <input id="assunto" type="text" id="assunto" name="Assunto" placeholder="Digite o assunto da mensagem...">
+
+                  <label for="mensagem">Mensagem</label>
+                  <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem..."></textarea>
+
+                  <input id="mensagem" type="submit" value="Enviar" onclick="submeterContato()">
+
+                </form>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>
